@@ -2830,3 +2830,352 @@ footer {
     position: relative;
     z-index: 1;
 }
+/* ================= CERTIFICATES & INTERNSHIP ================= */
+
+#certificates,
+#internship {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#certificates {
+    background:
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(255, 95, 162, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 55%,
+            rgba(155, 108, 255, 0.10),
+            transparent 30%
+        );
+}
+
+#internship {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(196, 156, 255, 0.08),
+            transparent 35%
+        );
+}
+
+#certificates h2,
+#internship h2 {
+    text-align: center;
+    color: var(--pink);
+    font-size: 44px;
+    margin-bottom: 45px;
+}
+
+/* Decorative butterflies */
+
+#certificates::before {
+    content: "🦋";
+    position: absolute;
+    top: 45px;
+    left: 8%;
+    font-size: 38px;
+    opacity: 0.55;
+    filter: drop-shadow(0 0 12px rgba(255, 95, 162, 0.7));
+    animation: floatButterfly 5s ease-in-out infinite;
+}
+
+#certificates::after {
+    content: "✦";
+    position: absolute;
+    right: 10%;
+    bottom: 50px;
+    color: var(--lavender);
+    font-size: 38px;
+    opacity: 0.65;
+    text-shadow: 0 0 18px rgba(196, 156, 255, 0.8);
+}
+
+/* Certificate Layout */
+
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 380px));
+    justify-content: center;
+    gap: 35px;
+}
+
+/* Certificate Card */
+
+.certificate-card {
+    position: relative;
+    padding: 16px;
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(72, 39, 91, 0.95),
+            rgba(35, 24, 54, 0.95)
+        );
+
+    border: 1px solid rgba(255, 95, 162, 0.30);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(155, 108, 255, 0.10),
+        inset 0 0 25px rgba(255, 95, 162, 0.05);
+
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Pink glowing corner */
+
+.certificate-card::before {
+    content: "";
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    top: -55px;
+    right: -55px;
+
+    background: rgba(255, 95, 162, 0.25);
+
+    border-radius: 50%;
+    filter: blur(25px);
+
+    transition: 0.4s ease;
+}
+
+/* Little flower */
+
+.certificate-card::after {
+    content: "✿";
+
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+
+    color: var(--pink);
+    font-size: 25px;
+    opacity: 0.45;
+
+    text-shadow: 0 0 12px rgba(255, 95, 162, 0.7);
+}
+
+/* Hover */
+
+.certificate-card:hover {
+    transform: translateY(-12px);
+
+    border-color: rgba(255, 95, 162, 0.75);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(255, 95, 162, 0.20),
+        0 0 60px rgba(155, 108, 255, 0.10);
+}
+
+.certificate-card:hover::before {
+    transform: scale(1.4);
+    opacity: 1;
+}
+
+/* Certificate Image Frame */
+
+.certificate-image {
+    width: 100%;
+    height: 300px;
+
+    padding: 10px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 95, 162, 0.18),
+            rgba(196, 156, 255, 0.15)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* Actual Certificate */
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.035);
+}
+
+/* Text */
+
+.certificate-card h3 {
+    margin-top: 20px;
+    margin-bottom: 6px;
+
+    color: #ffe3f1;
+
+    font-size: 21px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.certificate-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Internship Card */
+
+#internship .certificates-container {
+    grid-template-columns: minmax(280px, 420px);
+}
+
+#internship .certificate-image {
+    height: 330px;
+}
+
+/* ================= CERTIFICATE MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    #certificates h2,
+    #internship h2 {
+        font-size: 36px;
+    }
+
+    .certificates-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .certificate-card {
+        max-width: 380px;
+        margin: auto;
+    }
+
+    .certificate-image {
+        height: 270px;
+    }
+
+    #internship .certificate-image {
+        height: 290px;
+    }
+
+    #certificates::before {
+        left: 4%;
+        font-size: 28px;
+    }
+
+    #certificates::after {
+        right: 5%;
+        font-size: 28px;
+    }
+}
+/* Different Certificate Colors */
+
+.certificate-card:nth-child(1) {
+    background: linear-gradient(135deg, #642b55, #43285f);
+}
+
+.certificate-card:nth-child(2) {
+    background: linear-gradient(135deg, #3c2964, #24544f);
+}
+
+#internship .certificate-card {
+    background: linear-gradient(135deg, #57264f, #214f59);
+}
+/* ================= CERTIFICATE POPUP ================= */
+
+.certificate-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+
+    background: rgba(10, 6, 18, 0.92);
+    backdrop-filter: blur(12px);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+.certificate-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    background: white;
+    padding: 12px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 30px rgba(255, 95, 162, 0.45),
+        0 0 70px rgba(155, 108, 255, 0.25);
+}
+
+.certificate-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--hot-pink),
+        var(--purple)
+    );
+
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255, 95, 162, 0.5);
+
+    transition: 0.3s ease;
+}
+
+.certificate-close:hover {
+    transform: rotate(90deg) scale(1.1);
+}
