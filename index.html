@@ -18,6 +18,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#internship">Internship</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -130,6 +132,46 @@
             <span>🤝</span>
             <h3>Communication</h3>
             <p>Good communication and problem-solving skills.</p>
+        </div>
+
+    </div>
+</section>
+<!-- Certificates Section -->
+<section id="certificates">
+    <h2>My Certificates</h2>
+
+    <div class="certificates-container">
+
+        <div class="certificate-card" onclick="openCertificate('images/1c.jpeg')">
+            <div class="certificate-image">
+               <img src="images/1c.jpeg" alt="Course Certificate">
+            </div>
+            <h3>Course Certificate</h3>
+            <p>Certificate of course completion and learning.</p>
+        </div>
+<div class="certificate-card" onclick="openCertificate('images/2c.jpeg')">
+            <div class="certificate-image">
+                <img src="images/2c.jpeg" alt="Course Certificate">
+            </div>
+            <h3>Course Certificate</h3>
+            <p>Certificate of course completion and learning.</p>
+        </div>
+
+            </div>
+</section>
+<!-- Internship Section -->
+<section id="internship">
+    <h2>Internship</h2>
+
+    <div class="certificates-container">
+
+        <div class="certificate-card" onclick="openCertificate('images/1i.jpeg')">
+            <div class="certificate-image">
+               <img src="images/1i.jpeg" alt="Internship Certificate">
+            </div>
+
+            <h3>Internship Certificate</h3>
+            <p>Certificate of internship experience and learning.</p>
         </div>
 
     </div>
@@ -323,6 +365,17 @@
 
 
     <script src="script.js"></script>
+
+<script src="script.js"></script>
+
+<!-- Certificate Popup -->
+<div id="certificateModal" class="certificate-modal">
+
+    <button class="certificate-close" onclick="closeCertificate()">✕</button>
+
+    <img id="certificateImage" src="" alt="Certificate">
+
+</div>
 
 </body>
 
