@@ -54,3 +54,11 @@ function openProject(project) {
 function closeProject() {
     document.getElementById("projectModal").style.display = "none";
 }
+function openCertificate(imagePath) {
+    document.getElementById("certificateImage").src = imagePath;
+    document.getElementById("certificateModal").style.display = "flex";
+}
+
+function closeCertificate() {
+    document.getElementById("certificateModal").style.display = "none";
+}
